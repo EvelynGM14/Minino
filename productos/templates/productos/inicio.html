@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Minino</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bienvenido a Minino</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'lista_productos' %}">Lista de Productos</a></li>
+                    <li><a href="{% url 'crear_producto' %}">Crear Producto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Tu tienda de confianza para todo lo relacionado con gatos</h2>
+            <p>Ofrecemos una variedad de productos para cuidar y consentir a tus felinos.</p>
+            <a class="btn" href="{% url 'lista_productos' %}">Ver Productos</a>
+        </section>
+
+        <section class="features">
+            <h3>¿Por qué elegir Minino?</h3>
+            <div class="feature-item">
+                <h4>Calidad</h4>
+                <p>Productos de alta calidad para tu mascota.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Variedad</h4>
+                <p>Amplia gama de productos para satisfacer todas las necesidades de tu gato.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Soporte</h4>
+                <p>Asesoría y atención al cliente para resolver todas tus dudas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <b>
+                <p>&copy; 2024 Minino. Todos los derechos reservados.</p>
+            </b>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+/* estilos.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;  /* Fondo blanco */
+    color: black;  /* Color de texto negro */
+}
+
+h1 {
+    color: #090909;  /* Títulos en naranja */
+    text-align: center;
+    margin: 20px 0; /* Espaciado superior e inferior */
+    font-family: fantasy;
+    font-size: 40px;
+}
+
+h2 {
+    color:#090909;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    color: #090909;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    color: #5c3010;  /* Enlaces en naranja oscuro */
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;  /* Subrayar enlaces al pasar el mouse */
+}
+
+/* Encabezado */
+header {
+    background-color: #FF6F20;  /* Fondo de encabezado naranja */
+    padding: 20px 0;
+    color: rgb(235, 240, 235);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+/* Formulario */
+form {
+    max-width: 500px;
+    margin: 20px auto;  /* Centrar el formulario */
+    padding: 20px;
+    border: 2px solid black;  /* Borde negro */
+    border-radius: 10px;  /* Bordes redondeados */
+    background-color: #f9f9f9;  /* Fondo gris claro para el formulario */
+}
+
+form button {
+    background-color: #FF6F20;  /* Botón naranja */
+    color: white;  /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: darkorange;  /* Color más oscuro al pasar el mouse */
+}
+
+/* Lista de Productos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;  /* Espaciado superior */
+}
+
+th, td {
+    border: 1px solid black;  /* Bordes de tabla negros */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #FF6F20;  /* Encabezados de tabla en naranja */
+    color: white;  /* Texto blanco */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;  /* Filas pares con fondo gris claro */
+}
+
+tr:hover {
+    background-color: #FF6F20;  /* Resaltar fila al pasar el mouse */
+    color: white;  /* Cambiar texto a blanco */
+}
+
+/* Sección Hero */
+.hero {
+    background: url('{% static "img/gatos.jpg" %}') no-repeat center center/cover; /* Cambia esta imagen según tu carpeta de imágenes */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Características */
+.features {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.features h3 {
+    font-size: 2rem;
+}
+
+.feature-item {
+    margin: 20px;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

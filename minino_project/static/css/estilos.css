@@ -1,0 +1,72 @@
+/* estilos.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;  /* Fondo blanco */
+}
+
+h1 {
+    color: orange;  /* Títulos en naranja */
+    text-align: center;
+}
+
+a {
+    color: orange;  /* Enlaces en naranja */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;  /* Subrayar enlaces al pasar el mouse */
+}
+
+/* Formulario */
+form {
+    max-width: 500px;
+    margin: 20px auto;  /* Centrar el formulario */
+    padding: 20px;
+    border: 2px solid black;  /* Borde negro */
+    border-radius: 10px;  /* Bordes redondeados */
+    background-color: #f9f9f9;  /* Fondo gris claro para el formulario */
+}
+
+form button {
+    background-color: orange;  /* Botón naranja */
+    color: white;  /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: darkorange;  /* Color más oscuro al pasar el mouse */
+}
+
+/* Lista de Productos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;  /* Bordes de tabla negros */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: orange;  /* Encabezados de tabla en naranja */
+    color: white;  /* Texto blanco */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;  /* Filas pares con fondo gris claro */
+}
+
+tr:hover {
+    background-color: orange;  /* Resaltar fila al pasar el mouse */
+    color: white;  /* Cambiar texto a blanco */
+}
