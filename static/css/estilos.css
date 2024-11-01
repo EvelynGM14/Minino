@@ -5,16 +5,28 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;  /* Fondo blanco */
-    color: black;  /* Color de texto negro */
+    background-color: white;  
+    color: black; 
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    min-height: 100vh; /* La altura mínima es igual a la altura de la ventana */
+}
+
+
+main {
+    flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
 }
 
 h1 {
-    color: #090909;  /* Títulos en naranja */
+    color: #090909;  
     text-align: center;
-    margin: 20px 0; /* Espaciado superior e inferior */
+    margin: 20% 0;
     font-family: fantasy;
-    font-size: 40px;
+    font-size: 40%;
 }
 
 h2 {
@@ -28,20 +40,20 @@ p {
 }
 
 a {
-    color: #5c3010;  /* Enlaces en naranja oscuro */
+    color: #5c3010;  
     text-decoration: none;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 20%;
 }
 
 a:hover {
-    text-decoration: underline;  /* Subrayar enlaces al pasar el mouse */
+    text-decoration: underline;  
 }
 
 /* Encabezado */
 header {
     background-color: #FF6F20;  /* Fondo de encabezado naranja */
-    padding: 20px 0;
+    padding: 20% 0;
     color: rgb(235, 240, 235);
 }
 
@@ -53,25 +65,26 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-left: 20px;
+    margin-left: 20%;
 }
 
 /* Formulario */
 form {
-    max-width: 500px;
-    margin: 20px auto;  /* Centrar el formulario */
-    padding: 20px;
-    border: 2px solid black;  /* Borde negro */
-    border-radius: 10px;  /* Bordes redondeados */
-    background-color: #f9f9f9;  /* Fondo gris claro para el formulario */
+    max-width: 500%;
+    margin: 20% auto;  /* Centrar el formulario */
+    padding: 20%;
+    border: 2% solid black;  /* Borde negro */
+    border-radius: 10%;  /* Bordes redondeados */
+    background-color: rgb(207, 138, 95) !important;  /* Fondo naranja oscuro para el formulario */
+    text-align: center;
 }
 
 form button {
     background-color: #FF6F20;  /* Botón naranja */
     color: white;  /* Texto blanco */
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10% 15%;
+    border-radius: 5%;
     cursor: pointer;
 }
 
@@ -83,17 +96,17 @@ form button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;  /* Espaciado superior */
+    margin-top: 20%;  /* Espaciado superior */
 }
 
 th, td {
-    border: 1px solid black;  /* Bordes de tabla negros */
-    padding: 10px;
+    border: 1% solid black;  /* Bordes de tabla negros */
+    padding: 10%;
     text-align: center;
 }
 
 th {
-    background-color: #FF6F20;  /* Encabezados de tabla en naranja */
+    background-color: #813004 !important;  /* Encabezados de tabla en naranja */
     color: white;  /* Texto blanco */
 }
 
@@ -108,8 +121,8 @@ tr:hover {
 
 /* Sección Hero */
 .hero {
-    background: url('{% static "img/gatos.jpg" %}') no-repeat center center/cover; /* Cambia esta imagen según tu carpeta de imágenes */
-    height: 400px;
+    background-color: rgb(81, 81, 81) ;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,7 +142,7 @@ tr:hover {
 /* Características */
 .features {
     text-align: center;
-    padding: 50px 0;
+    padding: 50% 0;
 }
 
 .features h3 {
@@ -137,7 +150,7 @@ tr:hover {
 }
 
 .feature-item {
-    margin: 20px;
+    margin: 20%;
 }
 
 /* Pie de Página */
@@ -145,5 +158,6 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 10% 0;
+    margin-top: auto;
 }

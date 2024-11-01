@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - Minino</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Croquetas Minino</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'lista_productos' %}">Lista de Productos</a></li>
+                    <li><a href="{% url 'crear_producto' %}">Crear Producto</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <b>
+            <h2 style="text-align: center; color: orangered;">Crear cuenta nueva</h2>
+        </b>
+        <section class="register-section">
+            <div class="register-container">
+                <form method="post" action="{% url 'registro' %}">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div>
+                        <b><label for="id_username">Nombre de usuario:</label></b>
+                        {{ form.username }}
+                    </div>
+                    <br>
+
+                    <div>
+                        <b><label for="id_password1">Contraseña:</label></b>
+                        {{ form.password1 }}
+                    </div>
+                    <br>
+
+                    <div>
+                        <b><label for="id_password2">Confirmar contraseña:</label></b>
+                        {{ form.password2 }}
+                    </div>
+                    <br>
+
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <b>
+                <p>&copy; 2024 Minino. Todos los derechos reservados.</p>
+            </b>
+        </div>
+    </footer>
+</body>
+</html>

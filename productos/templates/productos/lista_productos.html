@@ -4,31 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Productos</title>
+    <title>Lista de Productos - Minino</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
-    <h1>Lista de Productos</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for producto in productos %}
-            <tr>
-                <td>{{ producto.nombre }}</td>
-                <td>{{ producto.descripcion }}</td>
-                <td>${{ producto.precio }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{% url 'crear_producto' %}">Crear nuevo producto</a>
-    <br>
-    <a href="{% url 'inicio' %}">Volver a inicio</a>
+    <header>
+        <div class="container">
+            <h1>Croquetas Minino</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'lista_productos' %}">Lista de Productos</a></li>
+                    <li><a href="{% url 'crear_producto' %}">Crear Producto</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="features">
+            <h2>Las mejores croquetas para tu felino especial ♥</h2>
+        </section>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>${{ producto.precio }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <div class="container">
+            <b>
+                <p>&copy; 2024 Minino. Todos los derechos reservados.</p>
+            </b>
+        </div>
+    </footer>
 </body>
 </html>
+

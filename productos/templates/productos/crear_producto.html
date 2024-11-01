@@ -8,14 +8,39 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
-    <h1>Crear Producto</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Crear Producto</button>
-    </form>
-    <a href="{% url 'lista_productos' %}">Volver a la lista de productos</a>
-    <br>
-    <a href="{% url 'inicio' %}">Volver a inicio</a>
+    <header>
+        <div class="container">
+            <h1>Croquetas Minino</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'lista_productos' %}">Lista de Productos</a></li>
+                    <li><a href="{% url 'crear_producto' %}">Crear Producto</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h2 style="text-align: center; color: orangered;">Crear Producto Nuevo</h2>
+
+    <section>
+        <b>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Crear Producto</button>
+            </form>
+        </b>
+        <br>
+    </section>
+
+    <footer>
+        <div class="container">
+            <b>
+                <p>&copy; 2024 Minino. Todos los derechos reservados.</p>
+            </b>
+        </div>
+    </footer>
 </body>
 </html>

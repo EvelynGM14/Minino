@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Minino</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Croquetas Minino</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'lista_productos' %}">Lista de Productos</a></li>
+                    <li><a href="{% url 'crear_producto' %}">Crear Producto</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li>
+                            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" style="background:none; border:none; color: white; cursor:pointer; padding:0;">
+                                    Cerrar Sesión
+                                </button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% if request.user.is_authenticated %}
+            <i>
+                <b>
+                    <h2 style="color:orange; text-align: center; text-decoration: underline;">Ya estás logueado como {{ request.user.username }}</h2>
+                </b>
+            </i>
+            <br>
+        {% else %}
+            <section class="login-section">
+                <div class="login-container">
+                    <h2 style="color: orangered; text-align: center;">Iniciar Sesión</h2>
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <b><label for="username">Nombre de usuario:</label></b>
+                        <input type="text" name="username" id="username" required>
+                        <br><br>
+
+                        <b><label for="password">Contraseña:</label></b>
+                        <input type="password" name="password" id="password" required>
+                        <br><br>
+
+                        <b><button type="submit">Ingresar</button></b>
+                    </form>
+                    {% if messages %}
+                        <ul class="error-messages">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <b>
+                        <p style="color: orangered; text-align: center;"><i>¿No tienes cuenta?</i></p>
+                    </b>
+                    <p style="text-align: center;"><a href="{% url 'registro' %}">Regístrate aquí</a></p>
+                </div>
+            </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <b>
+                <p>&copy; 2024 Minino. Todos los derechos reservados.</p>
+            </b>
+        </div>
+    </footer>
+</body>
+</html>
